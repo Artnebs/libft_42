@@ -6,7 +6,7 @@
 /*   By: anebbou <anebbou@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:49:38 by anebbou           #+#    #+#             */
-/*   Updated: 2024/11/11 14:34:34 by anebbou          ###   ########.fr       */
+/*   Updated: 2024/11/14 15:31:12 by anebbou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (!s || fd < 0)
-		return ;
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }
