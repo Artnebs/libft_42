@@ -6,7 +6,7 @@
 /*   By: anebbou <anebbou@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 11:38:09 by anebbou           #+#    #+#             */
-/*   Updated: 2024/11/12 20:22:57 by anebbou          ###   ########.fr       */
+/*   Updated: 2024/11/18 14:17:27 by anebbou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_ltoa(long n)
 		return (NULL);
 	if (n == 0)
 		str[0] = '0';
-	else 
+	else
 		ft_fill_ltoa(str, n, len);
 	return (str);
 }

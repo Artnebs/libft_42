@@ -6,7 +6,7 @@
 /*   By: anebbou <anebbou@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:15:27 by anebbou           #+#    #+#             */
-/*   Updated: 2024/11/12 10:14:42 by anebbou          ###   ########.fr       */
+/*   Updated: 2024/11/18 14:22:52 by anebbou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 char	*ft_utoa(unsigned int n)
 {
 	unsigned int	temp;
-	int	len;
-	char	*str;
+	int				len;
+	char			*str;
 
 	temp = n;
 	len = 1;
@@ -28,7 +28,7 @@ char	*ft_utoa(unsigned int n)
 	}
 	str = (char *)malloc(len + 1);
 	if (!str)
-		return NULL;
+		return (NULL);
 	str[len] = '\0';
 	while (len--)
 	{

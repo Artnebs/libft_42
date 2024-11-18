@@ -6,7 +6,7 @@
 /*   By: anebbou <anebbou@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 18:30:41 by anebbou           #+#    #+#             */
-/*   Updated: 2024/11/12 10:57:13 by anebbou          ###   ########.fr       */
+/*   Updated: 2024/11/18 14:18:37 by anebbou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static char	*ft_empty_substr(void)
 	return (sub);
 }
 
-//finds substring of s starting at index start and of length len - free after use
+//finds substring of s starting at index start of length len - free after use
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*sub;
