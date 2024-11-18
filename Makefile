@@ -6,7 +6,7 @@
 #    By: anebbou <anebbou@student42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 14:27:24 by anebbou           #+#    #+#              #
-#    Updated: 2024/11/12 12:22:03 by anebbou          ###   ########.fr        #
+#    Updated: 2024/11/17 16:10:16 by anebbou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,8 @@ ft_utoa.c \
 ft_ltoa.c \
 ft_isupper.c \
 ft_islower.c \
-ft_ltoa_base.c 
+ft_ltoa_base.c \
+ft_ltoa_base_upper.c
 
 BONUS_SRCS = ft_lstnew_bonus.c \
 ft_lstadd_front_bonus.c \
