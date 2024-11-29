@@ -6,7 +6,7 @@
 /*   By: anebbou <anebbou@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:27:34 by anebbou           #+#    #+#             */
-/*   Updated: 2024/11/13 14:14:40 by anebbou          ###   ########.fr       */
+/*   Updated: 2024/11/15 14:55:26 by anebbou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	new_list = NULL;
 	while (lst != NULL)
-	{
+	{z
 		new_elem = ft_lstnew(f(lst->content));
 		if (new_elem == NULL)
 		{
