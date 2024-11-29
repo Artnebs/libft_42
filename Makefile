@@ -6,89 +6,105 @@
 #    By: anebbou <anebbou@student42.fr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/06 14:27:24 by anebbou           #+#    #+#              #
-#    Updated: 2024/11/17 16:10:16 by anebbou          ###   ########.fr        #
+#    Updated: 2024/11/29 17:10:03 by anebbou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# Nom de la bibliothèque
 NAME = libft.a
 
+# Commandes de compilation
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_isalpha.c \
-ft_isdigit.c \
-ft_isalnum.c \
-ft_strlen.c \
-ft_strdup.c \
-ft_memset.c \
-ft_bzero.c \
-ft_memcpy.c \
-ft_memmove.c \
-ft_strchr.c \
-ft_strrchr.c \
-ft_strncmp.c \
-ft_memcmp.c \
-ft_atoi.c \
-ft_itoa.c \
-ft_split.c \
-ft_isascii.c \
-ft_isprint.c \
-ft_toupper.c \
-ft_tolower.c \
-ft_strlcpy.c \
-ft_strlcat.c \
-ft_strnstr.c \
-ft_memchr.c \
-ft_calloc.c \
-ft_substr.c \
-ft_strjoin.c \
-ft_strtrim.c \
-ft_strmapi.c \
-ft_striteri.c \
-ft_putchar_fd.c \
-ft_putstr_fd.c \
-ft_putendl_fd.c \
-ft_putnbr_fd.c \
-ft_utoa.c \
-ft_ltoa.c \
-ft_isupper.c \
-ft_islower.c \
-ft_ltoa_base.c \
-ft_ltoa_base_upper.c
+# Répertoires
+INCLUDES = includes
+LIBFT_DIR = srcs/libft
+PRINTF_DIR = srcs/ft_printf
+GNL_DIR = srcs/get_next_line
 
-BONUS_SRCS = ft_lstnew_bonus.c \
-ft_lstadd_front_bonus.c \
-ft_lstsize_bonus.c \
-ft_lstlast_bonus.c \
-ft_lstadd_back_bonus.c \
-ft_lstdelone_bonus.c \
-ft_lstclear_bonus.c \
-ft_lstiter_bonus.c \
-ft_lstmap_bonus.c
+# Fichiers sources listés manuellement
+LIBFT_SRCS = $(LIBFT_DIR)/ft_isalpha.c \
+			 $(LIBFT_DIR)/ft_isdigit.c \
+			 $(LIBFT_DIR)/ft_isalnum.c \
+			 $(LIBFT_DIR)/ft_strlen.c \
+			 $(LIBFT_DIR)/ft_strdup.c \
+			 $(LIBFT_DIR)/ft_memset.c \
+			 $(LIBFT_DIR)/ft_bzero.c \
+			 $(LIBFT_DIR)/ft_memcpy.c \
+			 $(LIBFT_DIR)/ft_memmove.c \
+			 $(LIBFT_DIR)/ft_strchr.c \
+			 $(LIBFT_DIR)/ft_strrchr.c \
+			 $(LIBFT_DIR)/ft_strncmp.c \
+			 $(LIBFT_DIR)/ft_memcmp.c \
+			 $(LIBFT_DIR)/ft_atoi.c \
+			 $(LIBFT_DIR)/ft_itoa.c \
+			 $(LIBFT_DIR)/ft_split.c \
+			 $(LIBFT_DIR)/ft_isascii.c \
+			 $(LIBFT_DIR)/ft_isprint.c \
+			 $(LIBFT_DIR)/ft_toupper.c \
+			 $(LIBFT_DIR)/ft_tolower.c \
+			 $(LIBFT_DIR)/ft_strlcpy.c \
+			 $(LIBFT_DIR)/ft_strlcat.c \
+			 $(LIBFT_DIR)/ft_strnstr.c \
+			 $(LIBFT_DIR)/ft_memchr.c \
+			 $(LIBFT_DIR)/ft_calloc.c \
+			 $(LIBFT_DIR)/ft_substr.c \
+			 $(LIBFT_DIR)/ft_strjoin.c \
+			 $(LIBFT_DIR)/ft_strtrim.c \
+			 $(LIBFT_DIR)/ft_strmapi.c \
+			 $(LIBFT_DIR)/ft_striteri.c \
+			 $(LIBFT_DIR)/ft_putchar_fd.c \
+			 $(LIBFT_DIR)/ft_putstr_fd.c \
+			 $(LIBFT_DIR)/ft_putendl_fd.c \
+			 $(LIBFT_DIR)/ft_putnbr_fd.c \
+			 $(LIBFT_DIR)/ft_utoa.c \
+			 $(LIBFT_DIR)/ft_ltoa.c \
+			 $(LIBFT_DIR)/ft_isupper.c \
+			 $(LIBFT_DIR)/ft_islower.c \
+			 $(LIBFT_DIR)/ft_ltoa_base.c \
+			 $(LIBFT_DIR)/ft_ltoa_base_upper.c \
+			 $(LIBFT_DIR)/ft_lstnew.c \
+			 $(LIBFT_DIR)/ft_lstadd_front.c \
+			 $(LIBFT_DIR)/ft_lstsize.c \
+			 $(LIBFT_DIR)/ft_lstlast.c \
+			 $(LIBFT_DIR)/ft_lstadd_back.c \
+			 $(LIBFT_DIR)/ft_lstdelone.c \
+			 $(LIBFT_DIR)/ft_lstclear.c \
+			 $(LIBFT_DIR)/ft_lstiter.c \
+			 $(LIBFT_DIR)/ft_lstmap.c
 
+PRINTF_SRCS = $(PRINTF_DIR)/ft_printf.c \
+			  $(PRINTF_DIR)/ft_printf_char_str.c \
+			  $(PRINTF_DIR)/ft_printf_numbers.c \
+			  $(PRINTF_DIR)/ft_printf_utils.c
+
+GNL_SRCS = $(GNL_DIR)/get_next_line.c \
+		   $(GNL_DIR)/get_next_line_utils.c
+
+# Tous les fichiers sources et objets
+SRCS = $(LIBFT_SRCS) $(PRINTF_SRCS) $(GNL_SRCS)
 OBJS = $(SRCS:.c=.o)
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-
+# Règles
 all: $(NAME)
 
-# Créer la bibliothèque à partir des fichiers objets
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+	@echo "$(NAME) créé avec succès !"
 
-# Générer la bibliothèque avec les fonctions bonus
-bonus: $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
+%.o: %.c
+	$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
+	@echo "Compilation de $< terminée."
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
-
+	rm -f $(OBJS)
+	@echo "Fichiers objets supprimés."
 
 fclean: clean
 	rm -f $(NAME)
-
+	@echo "$(NAME) supprimé."
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

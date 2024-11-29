@@ -6,7 +6,7 @@
 /*   By: anebbou <anebbou@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:27:09 by anebbou           #+#    #+#             */
-/*   Updated: 2024/11/17 16:21:33 by anebbou          ###   ########.fr       */
+/*   Updated: 2024/11/29 16:44:12 by anebbou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@
 # include <stdint.h>
 
 /* ************************************************************************** */
+/*MACROS*/
+/* ************************************************************************** */
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+# define MAX_FD 1024
+
+/* ************************************************************************** */
 /*STRUCTURES*/
 /* ************************************************************************** */
 
@@ -34,6 +44,13 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+typedef struct s_fd_buffer
+{
+	int					fd;
+	char				*buffer;
+	struct s_fd_buffer	*next;
+}	t_fd_buffer;
 
 /* ************************************************************************** */
 /*PROTO*/
@@ -101,6 +118,14 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// get_next_line functions
+
+char	*get_next_line(int fd);
+
+//printf functions
+
+int ft_printf(const char *format, ...);
 
 /* ************************************************************************** */
 /*DEBUG*/
